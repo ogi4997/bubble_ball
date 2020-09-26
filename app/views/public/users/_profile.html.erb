@@ -1,0 +1,30 @@
+<table class="table">
+	<tr></tr>
+
+	<tr>
+		<th>ニックネーム</th>
+		<th><%= user.nickname %></th>
+	</tr>
+
+	<tr>
+		<th>主な活動場所</th>
+		<th></th>
+	</tr>
+
+	<tr>
+		<th>フォロー数:</th>
+	    <th><%= link_to user.follower.count, user_follows_path(user) %></th>
+	</tr>
+
+	<tr>
+		<th>フォロワー数:</th>
+		<th><%= link_to user.followed.count, user_followers_path(user) %></th>
+	</tr>
+
+</table>
+
+<% if current_user == user %>
+<div class="row">
+	<%= link_to '登録情報編集', edit_user_path(user), class: "btn btn-primary" %>
+</div>
+<% end %>

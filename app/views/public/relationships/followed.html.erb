@@ -1,0 +1,13 @@
+<div class="col-xs-3 col-xs-offset-1">
+	<h2>ユーザー情報</h2>
+	<%= render 'public/users/profile', user: @user %>
+</div>
+
+<div class="col-xs-7">
+  <h2>フォロワー一覧</h2>
+    <% if @users.count > 0 %>
+      <%= render 'public/users/index', users: @users %>
+  <% else %>
+    <p>ユーザーはいません</p>
+  <% end %>
+</div>

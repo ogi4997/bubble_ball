@@ -1,0 +1,6 @@
+<div>
+<%= form_for @message, remote: true,html: { id: :chat_form_message }  do |f| %>
+    <%= f.text_area :message %>
+    <%= f.hidden_field :room_id, value: @room.id %>
+    <%= f.submit "送信" %>
+<% end %>

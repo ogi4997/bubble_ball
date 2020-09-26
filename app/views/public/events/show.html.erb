@@ -1,0 +1,40 @@
+<div class="col-xs-4 col-xs-offset-1">
+	<h2>ログインユーザー</h2>
+		<%= render 'public/users/profile', user: current_user %>
+</div>
+
+<div class="col-xs-5 col-xs-offset-1">
+
+	<h2>イベント詳細</h2>
+	<table>
+			<thead>
+				<tr>
+					<th></th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>イベント名:</td>
+					<td><%= @event.title %></td>
+				</tr>
+				<tr>
+					<td>場所:</td>
+					<td><%= @event.place %></td>
+				</tr>
+				<tr>
+					<td>時間:</td>
+					<td><%= @event.start %> ~ </br>
+						<%= @event.end %>
+					</td>
+				</tr>
+				<tr>
+					<td>詳細:</td>
+					<td><%= @event.body %></td>
+				</tr>
+			</tbody>
+	</table>
+
+	<%= link_to "内容を修正する", edit_event_path(@event) %>
+
+</div>

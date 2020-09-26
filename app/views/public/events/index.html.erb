@@ -1,0 +1,25 @@
+<div class="col-xs-8 col-xs-offset-2">
+<h2>予定一覧</h2>
+  <table class="table table-hover table-inverse">
+			<thead>
+				<tr>
+					<th></th>
+					<th>イベント名</th>
+					<th>場所</th>
+					<th>日時</th>
+					<th colspan="3"></th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<% @events.each do |event| %>
+				    <tr>
+					    <td></td>
+					    <td><%= link_to event.title, event_path(event) %></td>
+					    <td><%= event.place %></td>
+					    <td><%= event.start %> ~ <%= event.end %></td>
+				    </tr>
+				<% end %>
+			</tbody>
+	</table>
+</div>

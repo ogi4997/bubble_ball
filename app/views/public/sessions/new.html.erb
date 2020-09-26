@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-4 col-xs-offset-4">
+      <div class="panel panel-primary">
+        <div class="panel panel-heading">
+          <h2 class="section-ttl">ユーザーログイン</h2>
+        </div>
+        <div class="panel-body">
+          <% if flash[:danger] %>
+            <p class="text-red"><%= flash[:danger] %></p>
+          <% end %>
+
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <div class="form-group">
+              <%= f.label :email %><br />
+              <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+            </div>
+
+          <div class="form-group">
+            <%= f.label :password %><br />
+            <%= f.password_field :password, autocomplete: "current-password" %>
+          </div>
+        </div>
+      </div>
+
+    <% if devise_mapping.rememberable? %>
+      <div class="field">
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me %>
+      </div>
+    <% end %>
+
+    <div class="actions">
+      <%= f.submit "ログイン", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+
+  <h2 class="section-ttl">登録がお済みでない方</h2>
+  <p><%= link_to "こちら", new_user_registration_path, class: "underline" %>から新規登録を行なってください。</p>
+</div>
+</div>
+</div>
+</div>

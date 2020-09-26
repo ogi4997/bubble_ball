@@ -1,0 +1,15 @@
+<h1>ユーザー詳細</h1>
+<div class="col-xs-3 col-xs-offset-1">
+  <%= render 'public/users/profile', user: @user %>
+
+  <% if flash[:notice] %>
+    <p class="text-active"><%= flash[:notice] %></p>
+  <% end %>
+
+  <%= render 'public/users/contact' %>
+
+
+</div>
+
+
+

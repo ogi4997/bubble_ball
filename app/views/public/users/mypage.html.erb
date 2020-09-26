@@ -1,0 +1,58 @@
+<h1>マイページ</h1>
+<div class="col-xs-4 col-xs-offset-1">
+	<%= render 'public/users/profile', user: @user %>
+
+  <% if flash[:notice] %>
+    <p class="text-active"><%= flash[:notice] %></p>
+  <% end %>
+	<h3>
+		登録情報確認
+	</h3>
+	<table class="customer_info mb3">
+		<thead>
+			<th></th>
+			<th></th>
+			<th></th>
+		</thead>
+		<tbody>
+			<tr>
+				<td>名前</td>
+				<td>(姓) <%= @user.first_name %></td>
+				<td>(名) <%= @user.last_name %></td>
+			</tr>
+			<tr>
+				<td>フリガナ</td>
+				<td>(セイ) <%= @user.first_name_kana %></td>
+				<td>(メイ) <%= @user.last_name_kana %></td>
+			</tr>
+			<tr>
+				<td>メールアドレス</td>
+				<td colspan="2"><%= @user.email %></td>
+			</tr>
+			<tr>
+				<td>郵便番号</td>
+				<td colspan="2"><%= @user.postal_code %></td>
+			</tr>
+			<tr>
+				<td>住所</td>
+				<td colspan="2"><%= @user.address %></td>
+			</tr>
+			<tr>
+				<td>電話番号</td>
+				<td colspan="2"><%= @user.telephone_number %></td>
+			</tr>
+		</tbody>
+	</table>
+	<%= link_to "パスワードを変更する", edit_user_registration_path, class: "btn btn-success ml2" %>
+</div>
+
+<div class="col-xs-5 col-xs-offset-1">
+  <div id="calendar"></div>
+
+  <div class="btn-group">
+
+  <%= link_to "イベント新規登録", new_event_path, class: "btn btn-default" %>
+
+  <%= link_to "イベント一覧", events_path, class: "btn btn-default" %>
+  </div>
+</div>
