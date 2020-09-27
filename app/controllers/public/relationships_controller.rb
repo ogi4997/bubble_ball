@@ -3,6 +3,7 @@ class Public::RelationshipsController < ApplicationController
 	before_action :authenticate_user!
 
   def matcher
+    @user = current_user
   	@users = current_user.matcher
   end
   def create

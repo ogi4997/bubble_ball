@@ -67,6 +67,11 @@ class Public::UsersController < ApplicationController
     @followers = @user.follower_user.where.not(id: current_user.id)
   end
 
+  def matcher
+    @user = User.find(params[:id])
+    @users = current_user.matcher
+  end
+
   private
 
   def user_params
