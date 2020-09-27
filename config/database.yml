@@ -20,7 +20,6 @@ test:
   <<: *default
   database: db/test.sqlite3
 
-
 production:
   <<: *default
   database: <%= ENV['DB_DATABASE'] %>
@@ -30,4 +29,4 @@ production:
   collation: utf8mb4_general_ci
   host: <%= ENV['DB_HOST'] %>
   username: <%= ENV['DB_USERNAME'] %>
-  password: <%= ENV['DB_PASSWORD'] %
+  password: <%= ENV['DB_PASSWORD'] %>
