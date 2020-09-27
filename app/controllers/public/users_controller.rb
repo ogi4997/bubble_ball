@@ -70,6 +70,6 @@ class Public::UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:last_name, :first_name, :first_name_kana, :last_name_kana, :email, :tema_name, :, :telephone_number, :nickname)
+    params.require(:user).permit(:last_name, :first_name, :first_name_kana, :last_name_kana, :email, :postal_code, :address, :telephone_number, :nickname)
   end
 end
